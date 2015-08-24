@@ -74,7 +74,7 @@ public class GSASingleSourceShortestPaths<K> implements GraphAlgorithm<K, Double
 	private static final class CalculateDistances extends GatherFunction<Double, Double, Double> {
 
 		public Double gather(Neighbor<Double, Double> neighbor) {
-			return neighbor.getNeighborValue() + neighbor.getEdgeValue();
+			return null;
 		}
 	};
 
@@ -82,7 +82,7 @@ public class GSASingleSourceShortestPaths<K> implements GraphAlgorithm<K, Double
 	private static final class ChooseMinDistance extends SumFunction<Double, Double, Double> {
 
 		public Double sum(Double newValue, Double currentValue) {
-			return Math.min(newValue, currentValue);
+			return null;
 		}
 	};
 
@@ -90,9 +90,6 @@ public class GSASingleSourceShortestPaths<K> implements GraphAlgorithm<K, Double
 	private static final class UpdateDistance<K> extends ApplyFunction<K, Double, Double> {
 
 		public void apply(Double newDistance, Double oldDistance) {
-			if (newDistance < oldDistance) {
-				setResult(newDistance);
-			}
 		}
 	}
 }

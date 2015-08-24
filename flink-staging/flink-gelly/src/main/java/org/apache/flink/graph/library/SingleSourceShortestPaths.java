@@ -80,15 +80,7 @@ public class SingleSourceShortestPaths<K> implements GraphAlgorithm<K, Double, D
 
 			Double minDistance = Double.MAX_VALUE;
 
-			for (double msg : inMessages) {
-				if (msg < minDistance) {
-					minDistance = msg;
-				}
-			}
 
-			if (vertex.getValue() > minDistance) {
-				setNewVertexValue(minDistance);
-			}
 		}
 	}
 
@@ -103,9 +95,6 @@ public class SingleSourceShortestPaths<K> implements GraphAlgorithm<K, Double, D
 		@Override
 		public void sendMessages(Vertex<K, Double> vertex)
 				throws Exception {
-			for (Edge<K, Double> edge : getEdges()) {
-				sendMessageTo(edge.getTarget(), vertex.getValue() + edge.getValue());
-			}
 		}
 	}
 }

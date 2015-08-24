@@ -39,13 +39,11 @@ public class SingleSourceShortestPathsData {
 	public static final DataSet<Edge<Long, Double>> getDefaultEdgeDataSet(ExecutionEnvironment env) {
 
 		List<Edge<Long, Double>> edges = new ArrayList<Edge<Long, Double>>();
-		edges.add(new Edge<Long, Double>(1L, 2L, 12.0));
-		edges.add(new Edge<Long, Double>(1L, 3L, 13.0));
-		edges.add(new Edge<Long, Double>(2L, 3L, 23.0));
-		edges.add(new Edge<Long, Double>(3L, 4L, 34.0));
-		edges.add(new Edge<Long, Double>(3L, 5L, 35.0));
-		edges.add(new Edge<Long, Double>(4L, 5L, 45.0));
-		edges.add(new Edge<Long, Double>(5L, 1L, 51.0));
+		edges.add(new Edge<Long, Double>(1L, 2L, 2.0));
+		edges.add(new Edge<Long, Double>(1L, 3L, 3.0));
+		edges.add(new Edge<Long, Double>(1L, 4L, 4.0));
+		edges.add(new Edge<Long, Double>(2L, 4L, 1.0));
+		edges.add(new Edge<Long, Double>(3L, 4L, 2.0));
 
 		return env.fromCollection(edges);
 	}
